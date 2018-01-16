@@ -18,7 +18,7 @@ def about():
 
 
 @app.route('/addpost')
-def addpost:
+def addpost():
 	return render_template('addpost.html')
 
 
