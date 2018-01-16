@@ -15,8 +15,12 @@ def feed():
 def about():
 	return render_template('about.html')
 
-@app.route('/addpost')
+@app.route('/addpost', methods=['POST'])
 def addpost():
+	title = request.form['title']
+	city = request.form['city']
+	text = request.form['text']
+	
 	return render_template('addpost.html')
 
 
@@ -34,4 +38,3 @@ class User(db.Model):
 
 	def __repr__(self):
 		return '<Title %r>' % self.title 
-	
