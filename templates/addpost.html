@@ -19,5 +19,17 @@
   <a href="addpost">Add Post</a>
   <a href="about">About</a>
 </div>
+
+<form action="{{ url_for(addpost) }}">
+  <input type="text" name="title">
+  <input type="radio" name="city" value="city1">City 1 <br>
+  <input type="radio" name="city" value="city2">City 2 <br>
+  <input type="radio" name="city" value="city3">City 3 <br>
+  <input type="radio" name="city" value="city4">City 4 <br>
+  <input type="radio" name="city" value="city5">City 5 <br>
+  <input type="radio" name="city" value="city6">City 6 <br>
+  <input type="text" name="text">
+  <input type="submit" value="Submit">
+</form>
 </body>
 </html>
