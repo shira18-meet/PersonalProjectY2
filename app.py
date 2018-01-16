@@ -11,17 +11,24 @@ db = SQLAlchemy(app)
 def feed():
 	return render_template('feed.html')
 
+
 @app.route('/about')
 def about():
 	return render_template('about.html')
 
-@app.route('/addpost', methods=['POST'])
-def addpost():
+
+@app.route('/addpost')
+def addpost:
+	return render_template('addpost.html')
+
+
+@app.route('/posting', methods=['POST'])
+def posting():
 	title = request.form['title']
 	city = request.form['city']
 	text = request.form['text']
 
-	return render_template('addpost.html')
+	return render_template('feed.html')
 
 
 class User(db.Model):
