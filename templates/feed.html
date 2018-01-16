@@ -5,6 +5,7 @@
 <head>
 	<title>LIVE IN EXTREAME</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+  <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
 </head>
 <body>
 <div class="navigation">
@@ -20,11 +21,17 @@
   <a href="addpost">Add Post</a>
   <a href="about">About</a>
 </div>
+<br><br>
+<h1>The newest posts</h1>
+<div class="post" style="font-family: 'Annie Use Your Telescope';border-style: solid;border-width: 5px;">
+  {%for post in posts%}
 
-<div class="post">
-  <h2>This is a fake title</h2>
-  <h4>This is fake city</h4>
-  <p>some cool fake stuff saying basically i don't have a working database</p>
+  <h2>{{post.title}}</h2>
+  <h4>{{post.city}}</h4>
+  <p>{{post.text}}</p>
+
+  {%endfor%}
 </div>
+<br><br>
 </body>
 </html>

@@ -4,6 +4,8 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
 	<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Bigelow Rules' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
 </head>
 <body>
 <div class="navigation">
@@ -19,16 +21,19 @@
   <a href="addpost">Add Post</a>
   <a href="about">About</a>
 </div>
-
-<form action="{{ url_for(posting) }}">
-  <input type="text" name="title"><br>
+<br><br>
+<h1 style="font-family: 'Allan'">Add post</h1>
+<h2 style="font-family: 'Bigelow Rules';">We'd love for you to reccomend others cool places to visit in your area or from your expirience. Help others enjoy!</h2>
+<br><br>
+<form action="{{ url_for('posting') }}">
+  <input type="text" name="title" placeholder="Title - Name of the place"><br><br>
   <input type="radio" name="city" value="city1">City 1 
   <input type="radio" name="city" value="city2">City 2 
   <input type="radio" name="city" value="city3">City 3 
   <input type="radio" name="city" value="city4">City 4 
   <input type="radio" name="city" value="city5">City 5 
-  <input type="radio" name="city" value="city6">City 6 
-  <input type="text" name="text"><br>
+  <input type="radio" name="city" value="city6">City 6 <br><br>
+  <textarea placeholder="Describe the place, you likes and dislikes, and of course where it is and" style="height:100px; width: 400px" name="textarea"></textarea><br>
   <input type="submit" value="Submit">
 </form>
 </body>
