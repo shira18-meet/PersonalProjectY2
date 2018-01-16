@@ -1,5 +1,5 @@
-from flask.ext.sqlalchemy import SQLAlchemy
-
+from flask_sqlalchemy import SQLAlchemy
+import os
 from flask import Flask
 app = Flask(__name__)
 from flask import render_template
@@ -20,7 +20,7 @@ def addpost():
 	title = request.form['title']
 	city = request.form['city']
 	text = request.form['text']
-	
+
 	return render_template('addpost.html')
 
 
