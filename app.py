@@ -1,14 +1,21 @@
-from flask import Flask
+from flask import Flask,session, render_template
 from flask_sqlalchemy import SQLAlchemy
+
+
 import os
-from database import Base, Post #tables
-app = Flask(__name__)
-from flask import render_template
-##app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-db = SQLAlchemy(app)
-from model import Base, Post, Option
-from sqlalchemy import create_engine, desc
+
 from sqlalchemy.orm import sessionmaker
+from database import Base, Post #tables
+##app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+
+from SQLAlchemy import create_engine, desc
+
+engine = create_engine('sqlite:///project.db')
+DBSession = sessionmaker(bind=engine)
+session = DBSession()
+app = Flask(__name__)
+
+db = SQLAlchemy(app)
 
 
 @app.route('/')
@@ -17,6 +24,15 @@ def feed():
 	posts=session.query(Post).order_by("id desc").all()
 	return render_template('feed.html',posts=posts)
 
+@app.route('/newyork')
+def newyork():
+	posts=session.query(Post).filter_by(city="New York").order_by('id desc').all()
+	return render_template('feed.html',posts=posts)
+
+@app.route('/texas')
+def texas():
+	posts=session.query(Post).filter_by(city="Texas").order_by('id desc').all()
+	return render_template('feed.html',posts=posts)
 
 @app.route('/about')
 def about():
