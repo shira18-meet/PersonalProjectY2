@@ -4,6 +4,9 @@ from sqlalchemy import Column, Date, Float, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from flask_sqlalchemy import SQLAlchemy
+from model import Base, Post, Option
+from sqlalchemy import create_engine, desc
+from sqlalchemy.orm import sessionmaker
 
 ##db = SQLAlchemy(app)
 Base = declarative_base()
