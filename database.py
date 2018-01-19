@@ -1,20 +1,21 @@
 from flask import Flask,session
-from sqlalchemy import create_engine, desc
-from sqlalchemy.orm import sessionmaker
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Column, Date, Float, ForeignKey, Integer, String
+from sqlalchemy import Column, DateTime, Integer, String, Boolean, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from flask_sqlalchemy import SQLAlchemy
-##from model import Base, Post, Option
-from sqlalchemy import create_engine, desc
-from sqlalchemy.orm import sessionmaker
-engine = create_engine('sqlite:///project.db')
-DBSession = sessionmaker(bind=engine)
-session = DBSession()
+#import os
 
-app = Flask(__name__)
 
-##db = SQLAlchemy(app)
+#from SQLAlchemy import create_engine, desc
+#from sqlalchemy.orm import sessionmaker
+#from flask_sqlalchemy import SQLAlchemy
+#from sqlalchemy import Column, Date, Float, ForeignKey, Integer, String
+#engine = create_engine('sqlite:///project.db')
+#DBSession = sessionmaker(bind=engine)
+#session = DBSession()
+
+#app = Flask(__name__)
+#db = SQLAlchemy(app)
+#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 Base = declarative_base()
 
 class Post(Base):
@@ -33,3 +34,4 @@ class Post(Base):
 
 	def __repr__(self):
 		return '<Title %r>' % self.title 
+

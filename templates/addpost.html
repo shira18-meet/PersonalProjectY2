@@ -4,35 +4,42 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
 	<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Bigelow Rules' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Coming Soon' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Leckerli One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Crafty Girls' rel='stylesheet'>
 </head>
 <body>
 <div class="navigation">
+  <img src="https://www.freelogoservices.com/api/main/images/1j+ojl1FOMkX9WypfBe43D6kjf6Bqx5ImhvJwXs1M3EMoAJtlSErhfVj8fU7" align="right">
   <a href="feed">Home</a>
    <div class ="dropdown">
-  	<button class="dropbtn">Cities</button>
-  	<div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  	</div>
-	</div>
+    <button class="dropbtn">States</button>
+    <div class="dropdown-content">
+    <a href="new york">New York</a>
+    <a href="texas">Texas</a>
+    <a href="california">California</a>
+    <a href="washington">Washington</a>
+    <a href="florida">Florida</a>
+    <a href="hawaii">Texas</a>
+    </div>
+  </div>
   <a href="addpost">Add Post</a>
   <a href="about">About</a>
+
 </div>
 <br><br>
-<h1 style="font-family: 'Allan'">Add post</h1>
-<h2 style="font-family: 'Bigelow Rules';">We'd love for you to reccomend others cool places to visit in your area or from your expirience. Help others enjoy!</h2>
+<h1 style="font-family: 'Leckerli One'">Add post</h1>
+<h3 style="font-family: 'Crafty Girls'; ">We'd love for you to reccomend others cool places to visit in your area or from your expirience. Help others enjoy!</h3>
 <br><br>
-<form action="{{ url_for('posting') }}">
+<form action="{{ url_for('addpost') }}" style=" font-family: 'Coming Soon'">
   <input type="text" name="title" placeholder="Title - Name of the place"><br><br>
-  <input type="radio" name="city" value="city1">City 1 
-  <input type="radio" name="city" value="city2">City 2 
-  <input type="radio" name="city" value="city3">City 3 
-  <input type="radio" name="city" value="city4">City 4 
-  <input type="radio" name="city" value="city5">City 5 
-  <input type="radio" name="city" value="city6">City 6 <br><br>
+  <input type="radio" name="state" value="new york">New York 
+  <input type="radio" name="state" value="texas">Texas
+  <input type="radio" name="state" value="california">Califronia
+  <input type="radio" name="state" value="washington">Washington
+  <input type="radio" name="state" value="florida">Florida
+  <input type="radio" name="state" value="hawaii">Hawaii
+  <input type="radio" name="state" value="other">Other <br><br>
   <textarea placeholder="Describe the place, you likes and dislikes, and of course where it is and" style="height:100px; width: 400px" name="textarea"></textarea><br>
   <input type="submit" value="Submit">
 </form>

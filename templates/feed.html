@@ -1,36 +1,42 @@
 
 <!DOCTYPE html>
 <html>
-<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+
 <head>
 	<title>LIVE IN EXTREAME</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
   <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Caveat Brush' rel='stylesheet'>
 </head>
 <body>
 <div class="navigation">
+  <img src="https://www.freelogoservices.com/api/main/images/1j+ojl1FOMkX9WypfBe43D6kjf6Bqx5ImhvJwXs1M3EMoAJtlSErhfVj8fU7" align="right">
   <a href="feed">Home</a>
-   <div class ="dropdown">
-  	<button class="dropbtn">Cities</button>
+  <div class ="dropdown">
+    <button class="dropbtn">States</button>
   	<div class="dropdown-content">
     <a href="new york">New York</a>
     <a href="texas">Texas</a>
-    <a href="#">Link 3</a>
+    <a href="california">California</a>
+    <a href="washington">Washington</a>
+    <a href="florida">Florida</a>
+    <a href="hawaii">Texas</a>
   	</div>
 	</div>
   <a href="addpost">Add Post</a>
   <a href="about">About</a>
 </div>
 <br><br>
-<h1>The newest posts</h1>
+<h1 style="font-family: 'Caveat Brush'">The newest posts</h1>
 <div class="post" style="font-family: 'Annie Use Your Telescope';border-style: solid;border-width: 5px;">
-  {%for post in posts%}
+  {% for post in posts %}
 
   <h2>{{post.title}}</h2>
   <h4>{{post.city}}</h4>
   <p>{{post.text}}</p>
 
-  {%endfor%}
+  {% endfor %}
 </div>
 <br><br>
 </body>
