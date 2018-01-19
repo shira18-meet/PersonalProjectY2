@@ -9,7 +9,6 @@ import sys
 ##from flask import Flask,session, render_template
 ##from flask_sqlalchemy import SQLAlchemy
 
-##import os
 
 # SQLAlchemy shit
 from sqlalchemy.orm import sessionmaker
