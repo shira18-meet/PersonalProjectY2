@@ -68,3 +68,17 @@ body{
 	background-color: #ddd;
     color: black;
 }
+
+.cancel{
+    padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+
+}
+.cancel:hover{
+    color: #fff;
+    background-color: #000;
+}

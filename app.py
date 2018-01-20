@@ -42,9 +42,9 @@ def addpost():
 	if request.method == 'GET':
 		return render_template('addpost.html')
 	else:
-		post_title = request.form['title']
-		post_city = request.form['city']
-		post_text = request.form['textarea']
+		post_title = request.form.get('title')
+		post_city = request.form.get('city')
+		post_text = request.form('textarea')
 		thepost= Post(title=post_title,city=post_city,text=post_text)
 		session.add(thepost)
 		session.commit()
