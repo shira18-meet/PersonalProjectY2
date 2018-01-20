@@ -10,7 +10,7 @@ body{
     text-align: center;
     padding:14px 14px;
     text-decoration:none;
-    font-size:26px;
+    font-size:24px;
     font-family:'Amatic SC';    
 
 }
@@ -30,7 +30,7 @@ body{
 }
 
 .dropdown .dropbtn {
-    font-size: 26px;    
+    font-size: 24px;    
     border: none;
     outline: none;
     color: white;
