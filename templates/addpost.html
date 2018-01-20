@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Add post 📝</title>
-  <link rel="shortcut icon" href="http://alphabetletters.org/cursive-letters/pink-cursive-alphabet-s.jpg" />
+  <link rel="shortcut icon" href="http://www.clker.com/cliparts/B/b/e/c/Y/5/the-letter-s-hi.png" />
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
 	<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Coming Soon' rel='stylesheet'>
@@ -42,7 +42,7 @@
   <input type="radio" name="state" value="hawaii">Hawaii
   <input type="radio" name="state" value="other">Other <br><br>
   <textarea placeholder="Describe the place, your likes and dislikes, and of course where it is and" style="height:100px; width: 400px" name="textarea"></textarea><br>
-  <input type="submit">
+  <input class="cancel" type="submit">
   <a class="cancel" href="{{url_for('feed')}}">Cancel</a>
 
 </form>
