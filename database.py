@@ -1,5 +1,6 @@
 from flask import Flask,session
-from Flask_SQLAlchemy import SQLAlchemy
+##from Flask_SQLAlchemy import SQLAlchemy
+
 from sqlalchemy import Column, DateTime, Integer, String, Boolean, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 #import os
