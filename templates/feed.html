@@ -32,15 +32,15 @@
 </div>
 <br><br>
 <h1 style="font-family: 'Caveat Brush'">The newest posts</h1>
-<div class="post" style="font-family: 'Annie Use Your Telescope';border-style: solid;border-width: 5px;">
   {% for post in posts %}
+<div class="post" style="font-family: 'Annie Use Your Telescope';border-style: solid;border-width: 3px; text-align: center;">
+  <h1>{{post.title}}</h1>
+  <h2>{{post.city}}</h2>
+  <h3>{{post.text}}</h3>
 
-  <h2>{{post.title}}</h2>
-  <h4>{{post.city}}</h4>
-  <p>{{post.text}}</p>
-
-  {% endfor %}
 </div>
+<br><br>
+ {% endfor %}
 <br><br>
 </body>
 </html>

@@ -32,16 +32,16 @@
 <h1 style="font-family: 'Leckerli One'">Add post</h1>
 <h3 style="font-family: 'Crafty Girls'; ">We'd love for you to reccomend others cool places to visit in your area or from your expirience. Help others enjoy!</h3>
 <br><br>
-<form action="{{ url_for('addpost') }}" style=" font-family: 'Coming Soon'">
+<form action="{{ url_for('addpost') }}" method="POST" style=" font-family: 'Coming Soon'">
   <input type="text" name="title" placeholder="Title - Name of the place"><br><br>
-  <input type="radio" name="state" value="new york">New York 
-  <input type="radio" name="state" value="texas">Texas
-  <input type="radio" name="state" value="california">Califronia
-  <input type="radio" name="state" value="washington">Washington
-  <input type="radio" name="state" value="florida">Florida
-  <input type="radio" name="state" value="hawaii">Hawaii
-  <input type="radio" name="state" value="other">Other <br><br>
-  <textarea placeholder="Describe the place, your likes and dislikes, and of course where it is and" style="height:100px; width: 400px" name="textarea"></textarea><br>
+  <input type="radio" name="state" value="New York">New York 
+  <input type="radio" name="state" value="Texas">Texas
+  <input type="radio" name="state" value="California">Califronia
+  <input type="radio" name="state" value="Washington">Washington
+  <input type="radio" name="state" value="Florida">Florida
+  <input type="radio" name="state" value="Hawaii">Hawaii
+  <input type="radio" name="state" value="Other">Other <br><br>
+  <textarea placeholder="Describe the place, your likes and dislikes, and of course where it is and" style="height:100px; width: 400px" name="textish"></textarea><br>
   <input class="cancel" type="submit">
   <a class="cancel" href="{{url_for('feed')}}">Cancel</a>
 

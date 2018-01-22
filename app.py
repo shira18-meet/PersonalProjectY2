@@ -43,49 +43,49 @@ def addpost():
 		return render_template('addpost.html')
 	else:
 		post_title = request.form.get('title')
-		post_city = request.form.get('city')
-		post_text = request.form('textarea')
+		post_city = request.form.get('state')
+		post_text = request.form.get('textish')
 		thepost= Post(title=post_title,city=post_city,text=post_text)
 		session.add(thepost)
 		session.commit()
-		return redirect(url_for('feed.html'))
+		return redirect(url_for('feed'))
 
 
 @app.route('/new york')
 def newyork():
-	posts=session.query(Post).filter_by(city="new york").order_by('id desc').all()
+	posts=session.query(Post).filter_by(city="New York").order_by('id desc').all()
 	return render_template('feed.html',posts=posts)
 
 @app.route('/texas')
 def texas():
-	posts=session.query(Post).filter_by(city="texas").order_by('id desc').all()
+	posts=session.query(Post).filter_by(city="Texas").order_by('id desc').all()
 	return render_template('feed.html',posts=posts)
 
 
 @app.route('/california')
 def california():
-	posts=session.query(Post).filter_by(city="california").order_by('id desc').all()
+	posts=session.query(Post).filter_by(city="California").order_by('id desc').all()
 	return render_template('feed.html',posts=posts)
 
 @app.route('/washington')
 def washington():
-	posts=session.query(Post).filter_by(city="washington").order_by('id desc').all()
+	posts=session.query(Post).filter_by(city="Washington").order_by('id desc').all()
 	return render_template('feed.html',posts=posts)
 
 @app.route('/florida')
 def florida():
-	posts=session.query(Post).filter_by(city="florida").order_by('id desc').all()
+	posts=session.query(Post).filter_by(city="Florida").order_by('id desc').all()
 	return render_template('feed.html',posts=posts)
 
 
 @app.route('/hawaii')
 def hawaii():
-	posts=session.query(Post).filter_by(city="hawaii").order_by('id desc').all()
+	posts=session.query(Post).filter_by(city="Hawaii").order_by('id desc').all()
 	return render_template('feed.html',posts=posts)
 
 @app.route('/other')
 def other():
-	posts=session.query(Post).filter_by(city="other").order_by('id desc').all()
+	posts=session.query(Post).filter_by(city="Other").order_by('id desc').all()
 	return render_template('feed.html',posts=posts)
 
 ##@app.route('/posting', methods=['POST'])
