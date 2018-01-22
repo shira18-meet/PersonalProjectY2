@@ -88,14 +88,22 @@ def other():
 	posts=session.query(Post).filter_by(city="Other").order_by('id desc').all()
 	return render_template('feed.html',posts=posts)
 
-##@app.route('/posting', methods=['POST'])
-##def posting():
-	#post_title = request.form['title']
-	#post_city = request.form['city']
-	#post_text = request.form['textarea']
-	#thepost= Post(title=post_title,city=post_city,text=post_text)
-	#session.add(thepost)
-	#session.commit()
-	#return redirect(url_for('feed.html'))
+
+@app.route('/rate/post_id')
+def rate(post_id):
+	this_post = session.query(Post).filter_by(id=post_id).first()
+	this_post.amount+=1
+	tz=0
+	
+	this_post_rates=session.query(Rating).filter_by(id=this_post).all()
+	rating=request.form.get('rating')
+	this_rate=Rating(rates=rating, parent_id=this_post.id)
+	for x in this_post_rates:
+		tz+=x.rates
+	avrage=tz/this_post.amount
+	this_post.av_rating=avrage
+	session.add(this_rate)
+	session.commit()
+	return redirect(url_for('feed.html'))
 
 Base.metadata.create_all()

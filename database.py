@@ -4,7 +4,7 @@ from flask import Flask,session
 from sqlalchemy import Column, DateTime, Integer, String, Boolean, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 #import os
-
+from sqlalchemy.orm import relationship
 
 #from SQLAlchemy import create_engine, desc
 #from sqlalchemy.orm import sessionmaker
@@ -26,6 +26,9 @@ class Post(Base):
 	title=Column(String(80))
 	city = Column(String(50))
 	text = Column(String(300))
+	amount = Column(Integer, default=0)
+	av_rating=Column(Integer)
+	rate = relationship("Rating")
 
 
 	def __init__(self,title,city,text):
@@ -36,3 +39,12 @@ class Post(Base):
 	def __repr__(self):
 		return '<Title %r>' % self.title 
 
+class Rating(Base):
+	__tablename__='Rating'
+
+	id  = Column(Integer, primary_key=True)
+	rates=Column(Integer)
+	parent_id = Column(Integer, ForeignKey('post.id'))
+
+	def __init__(self, rate):
+		self.rating=rate;

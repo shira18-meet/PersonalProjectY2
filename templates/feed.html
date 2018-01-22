@@ -37,7 +37,18 @@
   <h1>{{post.title}}</h1>
   <h2>{{post.city}}</h2>
   <h3>{{post.text}}</h3>
-
+  <h3>Avrage rating : {{post.av_rating}}</h3>
+  <br><h3>Rate this place :</h3>
+  <form action="{{url_for('rate',post_id=rating)}}" style="font-size: 25px" >
+  
+  <input type="radio" name="rating" value="1">1
+  <input type="radio" name="rating" value="2">2
+  <input type="radio" name="rating" value="3">3
+  <input type="radio" name="rating" value="4">4
+  <input type="radio" name="rating" value="5">5
+  <br>
+  <input type="submit" class="cancel">
+</form>
 </div>
 <br><br>
  {% endfor %}
