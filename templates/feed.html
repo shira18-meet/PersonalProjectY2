@@ -31,7 +31,12 @@
   <a href="about" style="margin-right:9%; margin-top:40px; float:left;">About</a>
 </div>
 <br><br>
-<h1 style="font-family: 'Caveat Brush'">The newest posts</h1>
+<div class="container" style="font-family: 'Caveat Brush'">
+  <a href="feed" style="postion:relative; left:-40px;"data-animation="ripple"class="btn striped-shadow dark">The newest posts</a>
+  <a href="rated" style=" position: relative;"data-animation="ripple"class="btn striped-shadow dark">The most reccomnded places</a>
+ <br><br><br><br>
+</div>
+ 
   {% for post in posts %}
 <div class="post" style="font-family: 'Annie Use Your Telescope';border-style: solid;border-width: 3px; text-align: center;">
   <h1>{{post.title}}</h1>

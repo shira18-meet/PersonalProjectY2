@@ -31,6 +31,13 @@ def feed():
 	posts=session.query(Post).order_by("id desc").all()
 	return render_template('feed.html',posts=posts)
 
+@app.route('/rated')
+def rated():
+	posts=session.query(Post).order_by("av_rating desc").all()
+	return render_template('feed.html',posts=posts)
+
+
+
 
 @app.route('/about')
 def about():

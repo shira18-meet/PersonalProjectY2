@@ -1,8 +1,9 @@
+ @import 'https://fonts.googleapis.com/css?family=Bungee+Shade';
 body{
 	background-color: #ccf5ff;
 }
 .navigation{
-	 background-color: #333;
+	background-color: #333;
     overflow: hidden;
 }
 .navigation a{
@@ -74,10 +75,57 @@ body{
     width: auto;
     border: none;
     outline: none;
-    display: block;
+    font-size: 10px;
+    background-color: rgb(153, 179, 255);
 
 }
 .cancel:hover{
     color: #fff;
     background-color: #000;
+}
+
+
+
+:root {
+    /* if u want to change the color of
+     * the ripple change this value
+    */
+    --color-ripple: rgba(255,255,255,0.8);
+}
+
+
+.container {
+    background: #36353c;
+    height: 50px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto ;
+}
+*[data-animation="ripple"] {
+    display:block;
+    outline: none;
+    padding: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #e570e7 0%,#79f1fc 100%);
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 14px;
+    font-weight: 200;
+    letter-spacing: 1px;
+     font-family: 'Caveat Brush';
+    text-decoration: none;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  /*border-radius: 50px;*/
+    -webkit-tap-highlight-color: transparent;
+}
+
+*[data-animation="ripple"]:focus {
+    outline: none;
+}
+
+*[data-animation="ripple"]::selection {
+    background: transparent;
+    pointer-events: none;
 }
