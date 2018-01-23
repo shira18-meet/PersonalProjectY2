@@ -12,7 +12,7 @@ import sys
 
 # SQLAlchemy shit
 from sqlalchemy.orm import sessionmaker
-from database import Base, Post #tables
+from database import Base,Rating, Post #tables
 from sqlalchemy import create_engine, desc
 
 
@@ -96,21 +96,26 @@ def other():
 	return render_template('feed.html',posts=posts)
 
 
-@app.route('/rate/post_id')
+@app.route('/rate/<int:post_id>')
 def rate(post_id):
+	##post_id=request.form.get('p_id')
 	this_post = session.query(Post).filter_by(id=post_id).first()
 	this_post.amount+=1
 	tz=0
-	
-	this_post_rates=session.query(Rating).filter_by(id=this_post).all()
+
+
 	rating=request.form.get('rating')
-	this_rate=Rating(rates=rating, parent_id=this_post.id)
-	for x in this_post_rates:
-		tz+=x.rates
-	avrage=tz/this_post.amount
-	this_post.av_rating=avrage
+	this_rate=Rating(rates=rating, parent_id=post_id)
 	session.add(this_rate)
 	session.commit()
-	return redirect(url_for('feed.html'))
+	this_post_rates=session.query(Rating).filter_by(parent_id=post_id).all()
+	for x in this_post_rates:
+		j=x.rates
+		tz+=j
+
+	avrage=tz/this_post.amount
+	this_post.av_rating=avrage
+	session.commit()
+	return redirect(url_for('feed'))
 
 Base.metadata.create_all()

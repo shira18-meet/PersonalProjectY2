@@ -20,7 +20,7 @@ from sqlalchemy.orm import relationship
 Base = declarative_base()
 
 class Post(Base):
-	__tablename__ = 'post'
+	__tablename__ = 'Post'
 
 	id = Column(Integer, primary_key=True)
 	title=Column(String(80))
@@ -44,7 +44,11 @@ class Rating(Base):
 
 	id  = Column(Integer, primary_key=True)
 	rates=Column(Integer)
-	parent_id = Column(Integer, ForeignKey('post.id'))
+	parent_id = Column(Integer, ForeignKey('Post.id'))
 
-	def __init__(self, rate):
-		self.rating=rate;
+	def __init__(self, rates ,parent_id):
+		self.rates=rates
+		self.parent_id=parent_id
+
+
+
