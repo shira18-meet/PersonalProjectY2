@@ -95,15 +95,21 @@ body{
 
 
 .container {
-    background: #36353c;
     height: 50px;
     width: 200px;
-    margin-left: auto;
-    margin-right: auto ;
+    margin-left: 350px
 }
-*[data-animation="ripple"] {
+
+.none{
     display:block;
     outline: none;
+    display: inline-block;
+      margin-left: auto;
+    margin-right: auto ;
+    background: #36353c;
+}
+*[data-animation="ripple"] {
+
     padding: 20px;
     color: #fff;
     text-transform: uppercase;
