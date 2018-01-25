@@ -52,7 +52,8 @@ def addpost():
 		post_title = request.form.get('title')
 		post_city = request.form.get('state')
 		post_text = request.form.get('textish')
-		thepost= Post(title=post_title,city=post_city,text=post_text)
+		post_pic_url=request.form.get('pic_url')
+		thepost= Post(title=post_title,city=post_city,text=post_text, img_url=post_pic_url)
 		session.add(thepost)
 		session.commit()
 		return redirect(url_for('feed'))
@@ -96,26 +97,29 @@ def other():
 	return render_template('feed.html',posts=posts)
 
 
-@app.route('/rate/<int:post_id>')
+@app.route('/rate/<int:post_id>', methods=["POST", "GET"])
 def rate(post_id):
+	if request.method=="POST":
 	##post_id=request.form.get('p_id')
-	this_post = session.query(Post).filter_by(id=post_id).first()
-	this_post.amount+=1
-	tz=0
+		this_post = session.query(Post).filter_by(id=post_id).first()
+		this_post.amount+=1
+		tz=0
 
 
-	rating=request.form.get('rating')
-	this_rate=Rating(rates=rating, parent_id=post_id)
-	session.add(this_rate)
-	session.commit()
-	this_post_rates=session.query(Rating).filter_by(parent_id=post_id).all()
-	for x in this_post_rates:
-		j=x.rates
-		tz+=j
-
-	avrage=tz/this_post.amount
-	this_post.av_rating=avrage
-	session.commit()
+		rating=int(request.form.get('rating'))
+		this_rate=Rating(rates=rating, parent_id=post_id)
+		session.add(this_rate)
+		session.commit()
+		this_post_rates=session.query(Rating).filter_by(parent_id=post_id).all()
+		for x in this_post_rates:
+			j=x.rates
+			tz+=j
+		tz=float(tz)
+		this_post.amount=float(this_post.amount)
+		amount=tz/this_post.amount
+		this_post.av_rating=amount
+		session.commit()
 	return redirect(url_for('feed'))
 
 Base.metadata.create_all()
+app.debug = True

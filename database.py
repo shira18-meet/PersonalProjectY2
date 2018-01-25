@@ -1,7 +1,7 @@
 from flask import Flask,session
 ##from Flask_SQLAlchemy import SQLAlchemy
 
-from sqlalchemy import Column, DateTime, Integer, String, Boolean, ForeignKey
+from sqlalchemy import Column, DateTime, Integer, String, Boolean, ForeignKey, Float
 from sqlalchemy.ext.declarative import declarative_base
 #import os
 from sqlalchemy.orm import relationship
@@ -26,15 +26,17 @@ class Post(Base):
 	title=Column(String(80))
 	city = Column(String(50))
 	text = Column(String(300))
-	amount = Column(Integer, default=0)
-	av_rating=Column(Integer)
+	img_url=Column(String(100),default=None)
+	amount = Column(Float, default=0)
+	av_rating=Column(Float)
 	rate = relationship("Rating")
 
 
-	def __init__(self,title,city,text):
+	def __init__(self,title,city,text,img_url):
 		self.title=title
 		self.city=city
 		self.text=text
+		self.img_url=img_url
 
 	def __repr__(self):
 		return '<Title %r>' % self.title 

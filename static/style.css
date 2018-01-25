@@ -97,17 +97,9 @@ body{
 .container {
     height: 50px;
     width: 200px;
-    margin-left: 350px
+    margin: auto;
 }
 
-.none{
-    display:block;
-    outline: none;
-    display: inline-block;
-      margin-left: auto;
-    margin-right: auto ;
-    background: #36353c;
-}
 *[data-animation="ripple"] {
 
     padding: 20px;
@@ -119,7 +111,7 @@ body{
     line-height: 14px;
     font-weight: 200;
     letter-spacing: 1px;
-     font-family: 'Caveat Brush';
+    font-family: 'Caveat Brush';
     text-decoration: none;
     box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
     cursor: pointer;
