@@ -127,3 +127,7 @@ body{
     background: transparent;
     pointer-events: none;
 }
+
+.aboutme{
+    font-family: 'Annie Use Your Telescope';
+}
