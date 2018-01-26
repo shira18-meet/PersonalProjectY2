@@ -29,12 +29,12 @@ Base.metadata.bind = engine
 @app.route('/feed')
 def feed():
 	posts=session.query(Post).order_by("id desc").all()
-	return render_template('feed.html',posts=posts)
+	return render_template('feed.html',posts=posts, place="Recents feed")
 
 @app.route('/rated')
 def rated():
 	posts=session.query(Post).order_by("av_rating desc").all()
-	return render_template('feed.html',posts=posts)
+	return render_template('feed.html',posts=posts, place="Best rated posts")
 
 
 
@@ -62,39 +62,39 @@ def addpost():
 @app.route('/new york')
 def newyork():
 	posts=session.query(Post).filter_by(city="New York").order_by('id desc').all()
-	return render_template('feed.html',posts=posts)
+	return render_template('feed.html',posts=posts, place="New York")
 
 @app.route('/texas')
 def texas():
 	posts=session.query(Post).filter_by(city="Texas").order_by('id desc').all()
-	return render_template('feed.html',posts=posts)
+	return render_template('feed.html',posts=posts, place="Texas")
 
 
 @app.route('/california')
 def california():
 	posts=session.query(Post).filter_by(city="California").order_by('id desc').all()
-	return render_template('feed.html',posts=posts)
+	return render_template('feed.html',posts=posts, place="California")
 
 @app.route('/washington')
 def washington():
 	posts=session.query(Post).filter_by(city="Washington").order_by('id desc').all()
-	return render_template('feed.html',posts=posts)
+	return render_template('feed.html',posts=posts, place="Washington")
 
 @app.route('/florida')
 def florida():
 	posts=session.query(Post).filter_by(city="Florida").order_by('id desc').all()
-	return render_template('feed.html',posts=posts)
+	return render_template('feed.html',posts=posts, place="Florida")
 
 
 @app.route('/hawaii')
 def hawaii():
 	posts=session.query(Post).filter_by(city="Hawaii").order_by('id desc').all()
-	return render_template('feed.html',posts=posts)
+	return render_template('feed.html',posts=posts, place="Hawaii")
 
 @app.route('/other')
 def other():
 	posts=session.query(Post).filter_by(city="Other").order_by('id desc').all()
-	return render_template('feed.html',posts=posts)
+	return render_template('feed.html',posts=posts, place="Other")
 
 
 @app.route('/rate/<int:post_id>', methods=["POST", "GET"])
