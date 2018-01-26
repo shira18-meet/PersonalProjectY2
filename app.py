@@ -1,13 +1,10 @@
-       #flask shit
+#flask shit
 
 
 
 from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 import sys
-
-##from flask import Flask,session, render_template
-##from flask_sqlalchemy import SQLAlchemy
 
 
 # SQLAlchemy shit
@@ -16,14 +13,12 @@ from database import Base,Rating, Post #tables
 from sqlalchemy import create_engine, desc
 
 
-   #setup bro
+#setup bro
 engine = create_engine('sqlite:///project.db')
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 Base.metadata.bind = engine
 
-##db = SQLAlchemy(app)
-##app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 
 @app.route('/')
 @app.route('/feed')
