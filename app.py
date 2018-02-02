@@ -95,7 +95,6 @@ def other():
 @app.route('/rate/<int:post_id>', methods=["POST", "GET"])
 def rate(post_id):
 	if request.method=="POST":
-	##post_id=request.form.get('p_id')
 		this_post = session.query(Post).filter_by(id=post_id).first()
 		this_post.amount+=1
 		tz=0

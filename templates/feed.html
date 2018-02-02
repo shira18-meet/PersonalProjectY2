@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>Travel with Shira 👸🏝</title>
+	<title>Travel with Shira 🏝</title>
   <link rel="shortcut icon" href="http://www.clker.com/cliparts/B/b/e/c/Y/5/the-letter-s-hi.png" />
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
   <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
@@ -11,13 +11,12 @@
   <link href='https://fonts.googleapis.com/css?family=Caveat Brush' rel='stylesheet'>
 </head>
 <body>
-<div class="navigation" >
-  <a href="feed"  style= "float:left; margin-left:25px; margin-right:8%">
-  <img src="https://image.ibb.co/jXXvRw/logo.png" ></a>
-  <a href="feed " style="margin-right:9%; float:left;; margin-top:40px;">Home</a>
-  <div class ="dropdown" style="margin-right:9%; float:left">
-    <button class="dropbtn" style=" margin-top:40px; font-size:24px;">States</button>
-  	<div class="dropdown-content">
+<div class="navigation">
+  <h1 style="margin-top:40px; font-size:40px; margin-left:2%; margin-right:10%;float:left;">Travel with Shira 🏝</h1>
+  <a href="feed " style="margin-right:9%; margin-top:40px; float:left;">Home</a>
+  <div class ="dropdown" style="margin-right:9%; float:left;">
+    <button class="dropbtn" style=" margin-top:40px;">States</button>
+    <div class="dropdown-content">
     <a href="new york">New York</a>
     <a href="texas">Texas</a>
     <a href="california">California</a>
@@ -25,10 +24,12 @@
     <a href="florida">Florida</a>
     <a href="hawaii">Hawaii</a>
     <a href="other">Other</a>
-  	</div>
-	</div>
+    </div>
+  </div>
   <a href="addpost" style="margin-right:9%; margin-top:40px;float:left;">Add Post</a>
-  <a href="about" style="margin-right:9%; margin-top:40px; float:left;">About</a>
+  <a href="about" style="margin-right:7%; margin-top:40px; float:left;">About</a>
+  <a href="feed"  style= "float:right; margin-right:2%;">
+  <img src="https://image.ibb.co/jXXvRw/logo.png" ></a>
 </div>
 <br>
 <center><h1 style="font-family:'Caveat Brush'; ">The Feed - most recent posts and best rated ones :</h1></center>
@@ -51,7 +52,6 @@
   <br>
   <h3 style="font-size: 25px;">Average rating : {{post.av_rating}}</h3>
   <br><h3>Rate this place :</h3>
-<!-- <input type="text" name="p_id"  value="{{post.id}}"> -->
   <form action="{{url_for('rate',post_id=post.id)}} " method='POST' style="font-size: 25px" >
   <input type="radio" name="rating" value="1">1
   <input type="radio" name="rating" value="2">2
