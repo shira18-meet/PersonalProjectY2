@@ -29,9 +29,6 @@ def feed():
 @app.route('/rated')
 def rated():
 	posts=session.query(Post).order_by("av_rating desc").all()
-	u=session.query(Post).filter_by(title="a").first()
-	session.delete(u)
-	session.commit()
 	return render_template('feed.html',posts=posts, place="Best rated posts")
 
 
