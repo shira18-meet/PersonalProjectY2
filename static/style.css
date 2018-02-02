@@ -69,7 +69,14 @@ body{
 	background-color: #ddd;
     color: black;
 }
+.post{
 
+    font-family: 'Annie Use Your Telescope' ; 
+    border-bottom: 5px;
+    border-bottom-style: dotted; 
+    text-align: center;
+
+}
 .cancel{
     padding: 8px 16px;
     width: auto;
