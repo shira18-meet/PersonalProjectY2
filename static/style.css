@@ -1,6 +1,6 @@
  @import 'https://fonts.googleapis.com/css?family=Bungee+Shade';
 body{
-	background-image: travel.jpg;
+	background-image:url("travel.jpg");
 }
 .navigation{
 	background-color: #333;
