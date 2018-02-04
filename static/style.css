@@ -1,6 +1,6 @@
  @import 'https://fonts.googleapis.com/css?family=Bungee+Shade';
 body{
-	background-color: #ccf5ff;
+	background-img: url_for('https://pngtree.com/freebackground/cartoon-around-the-world-background-picture_858587.html');
 }
 .navigation{
 	background-color: #333;
