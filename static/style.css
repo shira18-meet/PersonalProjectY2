@@ -2,6 +2,7 @@
 body{
 	background-image:url("https://previews.123rf.com/images/nnnnae/nnnnae1603/nnnnae160300024/53611480-travel-around-the-world-airplane-routes-seamless-pattern-Stock-Photo.jpg");
 }
+/*just a comment incase, the original background color was : background-color: #ccf5ff;*/
 .navigation{
 	background-color: #333;
     overflow: hidden;
