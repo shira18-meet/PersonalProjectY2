@@ -45,51 +45,53 @@ def addpost():
 		return render_template('addpost.html')
 	else:
 		post_title = request.form.get('title')
-		post_city = request.form.get('state')
+		post_continent = request.form.get('continent')
+		post_country = request.form.get('country')
+		post_city = request.form.get('city')
 		post_text = request.form.get('textish')
 		post_pic_url=request.form.get('pic_url')
-		thepost= Post(title=post_title,city=post_city,text=post_text, img_url=post_pic_url)
+		thepost= Post(title=post_title,continent=post_continent,country=post_country,city=post_city,text=post_text, img_url=post_pic_url)
 		session.add(thepost)
 		session.commit()
 		return redirect(url_for('feed'))
 
 
-@app.route('/new york')
-def newyork():
-	posts=session.query(Post).filter_by(city="New York").order_by('id desc').all()
-	return render_template('feed.html',posts=posts, place="New York")
+@app.route('/Asia')
+def Asia():
+	posts=session.query(Post).filter_by(continent="Asia").order_by('id desc').all()
+	return render_template('feed.html',posts=posts, place="Asia")
 
-@app.route('/texas')
-def texas():
-	posts=session.query(Post).filter_by(city="Texas").order_by('id desc').all()
-	return render_template('feed.html',posts=posts, place="Texas")
-
-
-@app.route('/california')
-def california():
-	posts=session.query(Post).filter_by(city="California").order_by('id desc').all()
-	return render_template('feed.html',posts=posts, place="California")
-
-@app.route('/washington')
-def washington():
-	posts=session.query(Post).filter_by(city="Washington").order_by('id desc').all()
-	return render_template('feed.html',posts=posts, place="Washington")
-
-@app.route('/florida')
-def florida():
-	posts=session.query(Post).filter_by(city="Florida").order_by('id desc').all()
-	return render_template('feed.html',posts=posts, place="Florida")
+@app.route('/North_America')
+def North_America():
+	posts=session.query(Post).filter_by(continent="North_America").order_by('id desc').all()
+	return render_template('feed.html',posts=posts, place="North America")
 
 
-@app.route('/hawaii')
-def hawaii():
-	posts=session.query(Post).filter_by(city="Hawaii").order_by('id desc').all()
-	return render_template('feed.html',posts=posts, place="Hawaii")
+@app.route('/South_America')
+def South_America():
+	posts=session.query(Post).filter_by(continent="South_America").order_by('id desc').all()
+	return render_template('feed.html',posts=posts, place="South America")
 
-@app.route('/other')
-def other():
-	posts=session.query(Post).filter_by(city="Other").order_by('id desc').all()
-	return render_template('feed.html',posts=posts, place="Other")
+@app.route('/Europe')
+def Europe():
+	posts=session.query(Post).filter_by(continent="Europe").order_by('id desc').all()
+	return render_template('feed.html',posts=posts, place="Europe")
+
+@app.route('/Africa')
+def Africa():
+	posts=session.query(Post).filter_by(continent="Africa").order_by('id desc').all()
+	return render_template('feed.html',posts=posts, place="Africa")
+
+
+@app.route('/Australia')
+def Australia():
+	posts=session.query(Post).filter_by(continent="Australia").order_by('id desc').all()
+	return render_template('feed.html',posts=posts, place="Australia")
+
+@app.route('/Antartica')
+def Antartica():
+	posts=session.query(Post).filter_by(continent="Antartica").order_by('id desc').all()
+	return render_template('feed.html',posts=posts, place="Antartica")
 
 
 @app.route('/rate/<int:post_id>', methods=["POST", "GET"])

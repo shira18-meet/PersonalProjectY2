@@ -10,6 +10,8 @@ class Post(Base):
 
 	id = Column(Integer, primary_key=True)
 	title=Column(String(80))
+	continent= Column(String(50))
+	country = Column(String(50))
 	city = Column(String(50))
 	text = Column(String(300))
 	img_url=Column(String(100),default=None)
@@ -18,8 +20,10 @@ class Post(Base):
 	rate = relationship("Rating")
 
 
-	def __init__(self,title,city,text,img_url):
+	def __init__(self,title,continent,country,city,text,img_url):
 		self.title=title
+		self.continent=continent
+		self.country=country
 		self.city=city
 		self.text=text
 		self.img_url=img_url

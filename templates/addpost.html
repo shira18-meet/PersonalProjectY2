@@ -16,15 +16,15 @@
    <h1 style="margin-top:40px; font-size:40px; margin-left:2%; margin-right:10%;float:left;">Travel with Shira 🏝</h1>
   <a href="feed " style="margin-right:5%; margin-top:40px; float:left;">Home</a>
   <div class ="dropdown" style="margin-right:5%; float:left;">
-    <button class="dropbtn" style=" margin-top:40px;">States</button>
+    <button class="dropbtn" style=" margin-top:40px;">Continents</button>
     <div class="dropdown-content">
-    <a href="new york">New York</a>
-    <a href="texas">Texas</a>
-    <a href="california">California</a>
-    <a href="washington">Washington</a>
-    <a href="florida">Florida</a>
-    <a href="hawaii">Hawaii</a>
-    <a href="other">Other</a>
+    <a href="Asia">Asia</a>
+    <a href="North_America">North America</a>
+    <a href="South_America">South America</a>
+    <a href="Europe">Europe</a>
+    <a href="Africa">Africa</a>
+    <a href="Australia">Australia</a>
+    <a href="Antartica">Antartica</a>
     </div>
   </div>
   <a href="addpost" style="margin-right:5%; margin-top:40px;float:left;">Add Post</a>
@@ -33,18 +33,21 @@
   <img src="static\logo.png" ></a>
 </div>
 <br><br>
+<div class="add" align="center">
 <h1 style="font-family: 'Leckerli One'">Add post</h1>
 <h3 style="font-family: 'Crafty Girls'; ">We'd love for you to reccomend others cool places to visit in your area or from your expirience. Help others enjoy!</h3>
 <br><br>
 <form action="{{ url_for('addpost') }}" method="POST" style=" font-family: 'Coming Soon'">
   <input type="text" name="title" placeholder="Title - Name of the place"><br><br>
-  <input type="radio" name="state" value="New York">New York 
-  <input type="radio" name="state" value="Texas">Texas
-  <input type="radio" name="state" value="California">Califronia
-  <input type="radio" name="state" value="Washington">Washington
-  <input type="radio" name="state" value="Florida">Florida
-  <input type="radio" name="state" value="Hawaii">Hawaii
-  <input type="radio" name="state" value="Other">Other <br><br>
+  <input type="radio" name="continent" value="Asia">Asia
+  <input type="radio" name="continent" value="North_America">North America
+  <input type="radio" name="continent" value="South_America">North America
+  <input type="radio" name="continent" value="Europe">Europe
+  <input type="radio" name="continent" value="Africa">Africa
+  <input type="radio" name="continent" value="Australia">Australia
+  <input type="radio" name="continent" value="Antartica">Antartica <br><br>
+  <input type="text" name="country" placeholder="Enter Country" style="margin-right: 10px"><br><br>
+  <input type="text" name="city" placeholder="Enter City" style="margin-right: 10px"><br><br><br>
   <textarea placeholder="Describe the place, your likes and dislikes, and of course where it is and" style="height:100px; width: 400px" name="textish"></textarea>
   <br>
   <input type="text" name="pic_url" placeholder="Enter image url" style="margin-right: 10px">
@@ -52,6 +55,6 @@
   <a class="cancel" href="{{url_for('feed')}}" >Cancel</a>
 
 </form>
-
+</div>
 </body>
 </html>
