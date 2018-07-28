@@ -4,7 +4,7 @@
 
 <head>
 	<title>Travel with Shira 🏝</title>
-  <link rel="shortcut icon" href="http://www.clker.com/cliparts/B/b/e/c/Y/5/the-letter-s-hi.png" />
+  <link rel="shortcut icon" href="https://logos.textgiraffe.com/logos/logo-name/Shira-designstyle-popstar-m.png" />
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
   <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
@@ -13,7 +13,7 @@
 <body>
 <div class="navigation">
   <h1 style="margin-top:40px; font-size:40px; margin-left:2%; margin-right:10%;float:left;">Travel with Shira 🏝</h1>
-  <a href="feed " style="margin-right:5%; margin-top:40px; float:left;">Home</a>
+  <a href="feed " style="margin-right:25%; margin-top:40px; float:left;">Home</a>
   <div class ="dropdown" style="margin-right:5%; float:left;">
    <button class="dropbtn" style=" margin-top:40px;">Continents</button>
     <div class="dropdown-content">
@@ -46,9 +46,9 @@
   {% for post in posts %}
 <div class="post" >
  <h1>{{post.title}}</h1>
-  <h2>{{post.continent}} , {{post.country}} , {{post.city}}</h2>
+  <h2>{{post.continent}} , {{post.country}} {{post.city}}</h2>
   <h3 style="font-size: 20px;">{{post.text}}</h3> <br>
-  <img src="{{post.img_url}}" style="max-width: 500px; max-height: 250px ;min-width:400px; min-hight:200px;">
+  <img src="{{post.img_url}}" style="max-width: 650px; max-height: 325px ;min-width:500px; min-hight:250px;">
   <br>
   <h3 style="font-size: 25px;">Average rating : {{post.av_rating}}</h3>
   <br><h3>Rate this place :</h3>

@@ -48,6 +48,8 @@ def addpost():
 		post_continent = request.form.get('continent')
 		post_country = request.form.get('country')
 		post_city = request.form.get('city')
+		if post_city!="":
+			post_country+=","
 		post_text = request.form.get('textish')
 		post_pic_url=request.form.get('pic_url')
 		thepost= Post(title=post_title,continent=post_continent,country=post_country,city=post_city,text=post_text, img_url=post_pic_url)
@@ -63,13 +65,13 @@ def Asia():
 
 @app.route('/North_America')
 def North_America():
-	posts=session.query(Post).filter_by(continent="North_America").order_by('id desc').all()
+	posts=session.query(Post).filter_by(continent="North America").order_by('id desc').all()
 	return render_template('feed.html',posts=posts, place="North America")
 
 
 @app.route('/South_America')
 def South_America():
-	posts=session.query(Post).filter_by(continent="South_America").order_by('id desc').all()
+	posts=session.query(Post).filter_by(continent="South America").order_by('id desc').all()
 	return render_template('feed.html',posts=posts, place="South America")
 
 @app.route('/Europe')
